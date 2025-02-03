@@ -16,6 +16,17 @@ export default function Index() {
     );
     console.log(user);
   };
+
+  async function login(email: string, password: string) {
+    console.log("first");
+
+    try {
+      const res = await account.createEmailPasswordSession(email, password);
+      console.log(res, "res");
+    } catch (error) {
+      console.log(error, "error");
+    }
+  }
   return (
     <View
       style={{
@@ -24,7 +35,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text onPress={createUser}>Edit app/index.tsx to edit this screen.</Text>
+      <Text onPress={() => login("test@test.com", "password")}>Login</Text>
     </View>
   );
 }

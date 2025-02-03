@@ -1,0 +1,7 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { Redirect, Stack } from "expo-router";
+import useAuthStore from "@/hooks/useAuthStore";
+export default function layout() {
+  return <Stack />;
+}
